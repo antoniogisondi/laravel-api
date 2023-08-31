@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Type;
 use App\Models\Technology;
+use Illuminate\Support\Str;
 
 class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['type_id','titolo','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
+    protected $fillable = ['type_id','titolo', 'slug','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
         /**
          * Get the user associated with the Project
          *
@@ -29,6 +30,10 @@ class Project extends Model
         public function technologies()
         {
             return $this->belongsToMany(Technology::class); 
+        }
+
+        public static function generateSlug($titolo){
+            return Str::slug($titolo, '-');
         }
 }
 

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Technology;
+use Illuminate\Support\Str;
 
 class TechnologySeeder extends Seeder
 {
@@ -19,6 +20,7 @@ class TechnologySeeder extends Seeder
         foreach ($technologies as $tech) {
             $new_tech = new Technology();
             $new_tech->technology_name = $tech;
+            $new_tech->slug = Str::slug($tech, '-');
             $new_tech->save();
         }
     }
