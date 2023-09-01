@@ -20,7 +20,6 @@ class TypeSeeder extends Seeder
         foreach ($types as $item) {
             $type = new Type();
             $type->name = $item;
-            $type->slug = Str::slug($item, '-');
             $type->save();
         }
     }
