@@ -12,7 +12,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['type_id','titolo', 'slug','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
+    protected $fillable = ['type_id','titolo','descrizione','inizio_progetto','consegna_progetto','approvato', 'non_approvato', 'img'];
         /**
          * Get the user associated with the Project
          *

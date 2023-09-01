@@ -26,7 +26,7 @@
 
                         <div class="list">
                             <ul>
-                                @if ($project->type->name)
+                                @if ($project->type->name != null)
                                     <li><strong>Tipo progetto:</strong> {{$project->type->name}}</li>
                                 @else
                                     <li><strong>Tipo progetto:</strong>Non specificato</li>
